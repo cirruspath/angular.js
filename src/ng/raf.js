@@ -3,19 +3,19 @@
 /** @this */
 function $$RAFProvider() { //rAF
   this.$get = ['$window', '$timeout', function($window, $timeout) {
-    var requestAnimationFrame = $window.requestAnimationFrame ||
+    var windowRequestAnimationFrame = $window.requestAnimationFrame ||
                                 $window.webkitRequestAnimationFrame;
 
-    var cancelAnimationFrame = $window.cancelAnimationFrame ||
+    var windowCancelAnimationFrame = $window.cancelAnimationFrame ||
                                $window.webkitCancelAnimationFrame ||
                                $window.webkitCancelRequestAnimationFrame;
 
-    var rafSupported = !!requestAnimationFrame;
+    var rafSupported = !!windowRequestAnimationFrame;
     var raf = rafSupported
       ? function(fn) {
-          var id = requestAnimationFrame(fn);
+          var id = windowRequestAnimationFrame(fn);
           return function() {
-            cancelAnimationFrame(id);
+            windowCancelAnimationFrame(id);
           };
         }
       : function(fn) {

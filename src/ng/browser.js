@@ -305,7 +305,7 @@ function Browser(window, document, $log, $sniffer, $$taskTrackerFactory) {
     taskType = taskType || taskTracker.DEFAULT_TASK_TYPE;
 
     taskTracker.incTaskCount(taskType);
-    timeoutId = setTimeout(function() {
+    timeoutId = window.setTimeout(function() {
       delete pendingDeferIds[timeoutId];
       taskTracker.completeTask(fn, taskType);
     }, delay);
@@ -329,7 +329,7 @@ function Browser(window, document, $log, $sniffer, $$taskTrackerFactory) {
     if (pendingDeferIds.hasOwnProperty(deferId)) {
       var taskType = pendingDeferIds[deferId];
       delete pendingDeferIds[deferId];
-      clearTimeout(deferId);
+      window.clearTimeout(deferId);
       taskTracker.completeTask(noop, taskType);
       return true;
     }
