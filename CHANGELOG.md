@@ -1,3 +1,27 @@
+<a name="1.7.9"></a>
+# 1.7.9 pollution-eradication (2019-11-19)
+
+## Bug Fixes
+- **angular.merge:** do not merge __proto__ property
+  ([726f49](https://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a))
+  <br>(Thanks to the [Snyk Security Research Team](https://snyk.io/blog/snyk-research-team-discovers-severe-prototype-pollution-security-vulnerabilities-affecting-all-versions-of-lodash/) for identifyng this issue.)
+- **ngStyle:** correctly remove old style when new style value is invalid
+  ([5edd25](https://github.com/angular/angular.js/commit/5edd25364f617083363dc2bd61f9230b38267578),
+  [#16860](https://github.com/angular/angular.js/issues/16860),
+  [#16868](https://github.com/angular/angular.js/issues/16868))
+
+
+<a name="1.7.8"></a>
+# 1.7.8 enthusiastic-oblation (2019-03-11)
+
+
+## Bug Fixes
+- **required:** correctly validate required on non-input element surrounded by ngIf
+  ([a4c7bd](https://github.com/angular/angular.js/commit/a4c7bdccd76c39c30e33f6215da9a00cc8acde2c),
+  [#16830](https://github.com/angular/angular.js/issues/16830),
+  [#16836](https://github.com/angular/angular.js/issues/16836))
+
+
 <a name="1.7.7"></a>
 # 1.7.7 kingly-exiting (2019-02-04)
 
